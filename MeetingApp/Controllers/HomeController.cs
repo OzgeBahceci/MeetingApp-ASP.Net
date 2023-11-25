@@ -10,9 +10,10 @@ namespace MeetingApp.Controllers
 
         public IActionResult Index()
         {
+            //int saat = 9;
             int saat = DateTime.Now.Hour;
-            var selamla = saat>12 ? "İyi günler":"Günaydın";
-            return View(model:selamla);
+            ViewBag.Selamlama = saat>12 ? "İyi günler":"Günaydın";
+            return View();
         }
 
 
