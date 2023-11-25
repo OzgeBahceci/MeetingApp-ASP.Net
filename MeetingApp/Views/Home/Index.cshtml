@@ -4,6 +4,8 @@
     Layout = "_Layout2";
 }
 
+@* main bloğu asıl içeriğin olduğu yerdir *@
+<main class="text-center">
 @* <h1 class="h4">Merhaba, @ViewBag.UserName <br /> @ViewBag.Selamlama</h1>
  *@<h1 class="h4">Merhaba, @ViewData["UserName"] <br /> @ViewData["Selamlama"]</h1>
 
@@ -16,4 +18,4 @@
     </ul>
 </div>
 <a class="btn btn-sm btn-outline-primary" asp-controller="Meeting" asp-action="Apply">Basvuru yap</a>
-    
+</main>    
