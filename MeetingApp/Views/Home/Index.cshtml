@@ -3,7 +3,9 @@
     Layout = "_Layout2";
 }
 
-<h1 class="h4">Merhaba, @ViewBag.UserName <br /> @ViewBag.Selamlama</h1>
+@* <h1 class="h4">Merhaba, @ViewBag.UserName <br /> @ViewBag.Selamlama</h1>
+ *@<h1 class="h4">Merhaba, @ViewData["UserName"] <br /> @ViewData["Selamlama"]</h1>
+
 <p>Toplantıya katılım durumunuzu bildiriniz</p>
 <a class="btn btn-sm btn-outline-primary" asp-controller="Meeting" asp-action="Apply">Basvuru yap</a>
     
