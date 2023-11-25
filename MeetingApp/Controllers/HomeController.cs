@@ -17,12 +17,21 @@ namespace MeetingApp.Controllers
             //ViewBag.Selamlama = saat>12 ? "İyi günler":"Günaydın";
             //ViewBag.UserName = "Özgiş";
 
+            var meetingInfo = new MeetingInfo()
+            {
+                Id = 1,
+                Location = "Istanbul, Büyük Kongre Merkezi",
+                Date = new DateTime(2024, 01,20,20,0,0),
+                NumberOfPeople = 100
+
+            };
+
             //ViewData
             ViewData["Selamlama"] = saat > 12 ? "İyi günler" : "Günaydın";
             ViewData["UserName"] = "Özgiş";
 
 
-            return View();
+            return View(meetingInfo);
         }
 
 
