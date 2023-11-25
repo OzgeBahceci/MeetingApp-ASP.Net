@@ -13,6 +13,7 @@ namespace MeetingApp.Controllers
             //int saat = 9;
             int saat = DateTime.Now.Hour;
             ViewBag.Selamlama = saat>12 ? "İyi günler":"Günaydın";
+            ViewBag.UserName = "Özgiş";
             return View();
         }
 
