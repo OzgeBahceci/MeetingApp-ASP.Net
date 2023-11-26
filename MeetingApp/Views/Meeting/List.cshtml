@@ -17,7 +17,8 @@
             @foreach (var users in Model)
             {
                 var durum = users.WillAttend == true ? "Evet" : "Hayır";
-                <tr>
+                var className = users.WillAttend == true ? "table-success" : "table-danger";
+                <tr class="@className">
                     <td>@users.Name</td>
                     <td>@users.Phone</td>
                     <td>@users.Email</td>
