@@ -16,18 +16,20 @@ namespace MeetingApp.Controllers
             ////ViewBag
             //ViewBag.Selamlama = saat>12 ? "İyi günler":"Günaydın";
             //ViewBag.UserName = "Özgiş";
+            ViewData["Selamlama"] = saat > 12 ? "İyi günler" : "Günaydın";
+            var userCount = Repository.Users.Where(x => x.WillAttend == true).Count();
 
             var meetingInfo = new MeetingInfo()
             {
                 Id = 1,
                 Location = "Istanbul, Büyük Kongre Merkezi",
                 Date = new DateTime(2024, 01,20,20,0,0),
-                NumberOfPeople = 100
+                NumberOfPeople = userCount
 
             };
 
             //ViewData
-            ViewData["Selamlama"] = saat > 12 ? "İyi günler" : "Günaydın";
+
             //ViewData["UserName"] = "Özgiş";
 
 

@@ -8,27 +8,39 @@
         <thead>
             <tr>
                 <td>Ad</td>
-                <td>Email</td>
                 <td>Katılım Durumu</td>
                 <td>Detay</td>
             </tr>
         </thead>
         <tbody>
+            @{int i = 0;}
+
             @foreach (var users in Model)
             {
                 var durum = users.WillAttend == true ? "Evet" : "Hayır";
-                var className = users.WillAttend == true ? "table-success" : "table-danger";
+                var className = users.WillAttend == true ? "table-info" : "table-danger";
+
+                if( durum == "Evet")
+                {
+                    i++; 
+                }
+
                 <tr class="@className">
                     <td>@users.Name</td>
-                    <td>@users.Phone</td>
-                    <td>@users.Email</td>
                     <td>@durum</td>
                     <td>
-                        <a class="btn btn-sm btn-primary" href="#">Detay</a>
+                        <a class="btn btn-sm btn-primary" href="/meeting/details/@users.Id">Detay</a>
                     </td>
                 </tr>
             }
 
         </tbody>
     </table>
+
+    <div class="card">
+        <div class="card-body">
+            <p>Katılımcı Sayısı: @i</p>
+        </div>
+
+    </div>
 </main>
