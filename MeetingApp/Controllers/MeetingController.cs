@@ -16,16 +16,29 @@ namespace MeetingApp.Controllers
 
         public IActionResult Apply(UserInfo userInfo)
         {
-            //Alınan user, user listesine eklendi
-            Repository.CreatedUser(userInfo);
+
+            //oluşturulan model yani userInfo
+            //bütün aşaöalardan geçiyorsa; örneğin required olan yerler doluysa
+            //sorunsuzca oluştuğu durumda isvalid true olur
+            if (ModelState.IsValid)
+            {
+                //Alınan user, user listesine eklendi
+                Repository.CreatedUser(userInfo);
 
 
-            //WillAttend değeri true olan user sayısı
-            ViewBag.UserCount = Repository.Users.Where(x => x.WillAttend==true).Count();
+                //WillAttend değeri true olan user sayısı
+                ViewBag.UserCount = Repository.Users.Where(x => x.WillAttend == true).Count();
 
-            //User alındıktan sonra Thanks viewine yönlerdir ama
-            //bir model olmadan yönlendirilmesin userInfo ile cağrılsın
-            return View("Thanks", userInfo);
+                //User alındıktan sonra Thanks viewine yönlerdir ama
+                //bir model olmadan yönlendirilmesin userInfo ile cağrılsın
+                return View("Thanks", userInfo);
+            }
+
+            //eğer hatalı required varsa daha önceden girilen bilgiler sayfaya geri gelsin
+            else
+            {
+                return View(userInfo);
+            }
         }
         public IActionResult List()
         {

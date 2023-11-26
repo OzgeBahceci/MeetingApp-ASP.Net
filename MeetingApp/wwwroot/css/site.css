@@ -20,3 +20,10 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.validation-summary-errors{
+    color :#ff0000;
+}
+.input-validation-error {
+    border: 1px solid #ff0000;
+}
