@@ -28,7 +28,7 @@ namespace MeetingApp.Controllers
 
             //ViewData
             ViewData["Selamlama"] = saat > 12 ? "İyi günler" : "Günaydın";
-            ViewData["UserName"] = "Özgiş";
+            //ViewData["UserName"] = "Özgiş";
 
 
             return View(meetingInfo);
